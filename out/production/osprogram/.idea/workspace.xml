@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jp3mvbxOxeVMXSVy6wI0tEtyp7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/nachos/machine" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javapro\osprogram\nachos\machine" />
+      <recent name="D:\javapro\osprogram" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Machine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nachos.machine.Machine" />
+      <module name="osprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nachos.machine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Machine" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="" />
+      <created>1604487368039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604487368039</updated>
+      <workItem from="1604487370049" duration="7050000" />
+      <workItem from="1604498424760" duration="1156000" />
+      <workItem from="1604580680491" duration="271000" />
+      <workItem from="1604581512106" duration="1959000" />
+      <workItem from="1604668833296" duration="4040000" />
+      <workItem from="1604744854864" duration="871000" />
+      <workItem from="1604751108194" duration="2961000" />
+      <workItem from="1604820453946" duration="93000" />
+      <workItem from="1604820560776" duration="238000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="99" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604487894650">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="99" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487894650" />
+    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604487884870">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487884870" />
+    <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604487636605">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487636605" />
+    <state x="517" y="243" key="EnvironmentVariablesDialog" timestamp="1604487847867">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="517" y="243" key="EnvironmentVariablesDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487847867" />
+    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1604488185991">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604488185991" />
+    <state width="1492" height="224" key="GridCell.Tab.0.bottom" timestamp="1604745725935">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="224" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604745725935" />
+    <state width="1492" height="224" key="GridCell.Tab.0.center" timestamp="1604745725934">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="224" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604745725934" />
+    <state width="1492" height="224" key="GridCell.Tab.0.left" timestamp="1604745725934">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="224" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604745725934" />
+    <state width="1492" height="224" key="GridCell.Tab.0.right" timestamp="1604745725935">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="224" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604745725935" />
+    <state x="425" y="86" width="670" height="676" key="search.everywhere.popup" timestamp="1604490128942">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="86" width="670" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604490128942" />
+  </component>
+</project>
