@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="" />
+    <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/nachos/threads/Condition2.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Condition2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/KThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/KThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/PriorityScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/PriorityScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/ThreadedKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/ThreadedKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$PingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$PingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/ThreadedKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/ThreadedKernel.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\javapro\osprogram\.idea" />
+      </set>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -17,6 +60,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1jp3mvbxOxeVMXSVy6wI0tEtyp7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,7 +70,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/nachos/machine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../noSQLdemo" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -74,11 +118,44 @@
       <workItem from="1604751108194" duration="2961000" />
       <workItem from="1604820453946" duration="93000" />
       <workItem from="1604820560776" duration="238000" />
+      <workItem from="1604820827826" duration="470000" />
+      <workItem from="1604824584915" duration="61000" />
+      <workItem from="1604824778954" duration="1934000" />
+      <workItem from="1604827216895" duration="10428000" />
+      <workItem from="1604843101035" duration="26000" />
+      <workItem from="1604901633664" duration="4706000" />
+      <workItem from="1604908918893" duration="361000" />
+      <workItem from="1604917329352" duration="12968000" />
+      <workItem from="1605008599302" duration="6044000" />
+      <workItem from="1605015628926" duration="861000" />
+      <workItem from="1605019760762" duration="237000" />
+      <workItem from="1605060280186" duration="1192000" />
+      <workItem from="1605089139299" duration="7794000" />
+      <workItem from="1605101130698" duration="124000" />
+      <workItem from="1605101316669" duration="376000" />
+      <workItem from="1605180270790" duration="293000" />
+      <workItem from="1605186453317" duration="2293000" />
+      <workItem from="1605232421219" duration="3340000" />
+      <workItem from="1605252046834" duration="5425000" />
+      <workItem from="1605267607600" duration="4146000" />
+      <workItem from="1605348215810" duration="1210000" />
     </task>
+    <task id="LOCAL-00001" summary="源码">
+      <created>1604826626955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604826626955</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="源码" />
+    <option name="LAST_COMMIT_MESSAGE" value="源码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="99" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604487894650">
@@ -89,37 +166,61 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487884870" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1604921079227">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1604921079227" />
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604487636605">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487636605" />
+    <state x="365" y="28" key="CommitChangelistDialog2" timestamp="1604826622254">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="365" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1604826622254" />
     <state x="517" y="243" key="EnvironmentVariablesDialog" timestamp="1604487847867">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="517" y="243" key="EnvironmentVariablesDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487847867" />
-    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1604488185991">
+    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1605274766516">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1604488185991" />
-    <state width="1492" height="224" key="GridCell.Tab.0.bottom" timestamp="1604745725935">
+    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605274766516" />
+    <state x="631" y="328" key="Github.ShareDialog" timestamp="1604826132723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="224" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604745725935" />
-    <state width="1492" height="224" key="GridCell.Tab.0.center" timestamp="1604745725934">
+    <state x="631" y="328" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1604826132723" />
+    <state width="1492" height="375" key="GridCell.Tab.0.bottom" timestamp="1605099761536">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="224" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604745725934" />
-    <state width="1492" height="224" key="GridCell.Tab.0.left" timestamp="1604745725934">
+    <state width="1492" height="375" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
+    <state width="1492" height="375" key="GridCell.Tab.0.center" timestamp="1605099761536">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="224" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604745725934" />
-    <state width="1492" height="224" key="GridCell.Tab.0.right" timestamp="1604745725935">
+    <state width="1492" height="375" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
+    <state width="1492" height="375" key="GridCell.Tab.0.left" timestamp="1605099761536">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="224" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604745725935" />
-    <state x="425" y="86" width="670" height="676" key="search.everywhere.popup" timestamp="1604490128942">
+    <state width="1492" height="375" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
+    <state width="1492" height="375" key="GridCell.Tab.0.right" timestamp="1605099761536">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="86" width="670" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604490128942" />
+    <state width="1492" height="375" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
+    <state x="377" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604827323303">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="377" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604827323303" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1604923932720">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1604923932720" />
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1604909279910">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604909279910" />
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604908985007">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.864@0.0.1536.864" timestamp="1604908985007" />
   </component>
 </project>

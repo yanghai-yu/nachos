@@ -47,19 +47,21 @@ public class ThreadedKernel extends Kernel {
      */	
     public void selfTest() {
 	KThread.selfTest();
+	Alarm.selfTest();
 	Semaphore.selfTest();
 	SynchList.selfTest();
 	if (Machine.bank() != null) {
 	    ElevatorBank.selfTest();
 	}
     }
-    
     /**
      * A threaded kernel does not run user programs, so this method does
      * nothing.
      */
     public void run() {
+
     }
+
 
     /**
      * Terminate this kernel. Never returns.
