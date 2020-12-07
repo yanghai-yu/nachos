@@ -2,17 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nachos/threads/Condition2.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Condition2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/out/production/osprogram/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/ag/BoatGrader.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/ag/BoatGrader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/machine/CoffSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/CoffSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/machine/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/machine/StandardConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/StandardConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/machine/StubFileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/StubFileSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/proj1/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/proj1/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/proj2/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/proj2/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/cat.c" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/cat.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/cat.coff" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/cat.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/cat.o" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/cat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/halt.coff" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/halt.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/halt.o" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/halt.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/libnachos.a" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/libnachos.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/Communicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Communicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/Condition2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/Condition2Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/threads/KThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/KThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/LotteryScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/LotteryScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/threads/PriorityScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/PriorityScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/threads/SynchList.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/SynchList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/threads/ThreadedKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/threads/ThreadedKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/userprog/SynchConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/SynchConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/userprog/UThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/UThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/userprog/UserKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/UserKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/vm/VMKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/vm/VMKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/vm/VMProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/vm/VMProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/bin/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/bin/out/production/osprogram/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/ag/BoatGrader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/ag/BoatGrader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/CoffSection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/CoffSection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$Instruction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$Instruction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$Mips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$Mips.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$MipsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$MipsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$ProcessorPrivilege.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor$ProcessorPrivilege.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/Processor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StandardConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$FileRemover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$FileRemover.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$StubOpenFile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$StubOpenFile$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$StubOpenFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem$StubOpenFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/StubFileSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/proj1/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/proj1/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/proj2/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/proj2/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.c" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.coff" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.o" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/cat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/halt.coff" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/halt.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/halt.o" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/halt.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/libnachos.a" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/libnachos.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Alarm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Alarm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Alarm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Alarm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Boat$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Boat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Boat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Communicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Communicator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2Test$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2Test$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/Condition2Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$PingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread$PingTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/KThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/LotteryScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/LotteryScheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/MyCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/MyCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/PriorityScheduler$PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/PriorityScheduler$PriorityQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/PriorityScheduler$ThreadState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/PriorityScheduler$ThreadState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SaveThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SaveThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SynchList$PingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SynchList$PingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SynchList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/SynchList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/ThreadedKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/threads/ThreadedKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$File.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole$File.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/SynchConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMProcess.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +120,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SORT_ALPHABETICALLY" value="true" />
+  </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
       <set>
@@ -70,8 +150,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../noSQLdemo" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -81,8 +161,12 @@
   </component>
   <component name="RunManager">
     <configuration name="Machine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="MIPS" value="D:\Chrom下载\mips-x86.win32-xgcc" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="nachos.machine.Machine" />
       <module name="osprogram" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nachos/proj3" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="nachos.machine.*" />
@@ -138,7 +222,51 @@
       <workItem from="1605232421219" duration="3340000" />
       <workItem from="1605252046834" duration="5425000" />
       <workItem from="1605267607600" duration="4146000" />
-      <workItem from="1605348215810" duration="1210000" />
+      <workItem from="1605348215810" duration="3397000" />
+      <workItem from="1605405990588" duration="224000" />
+      <workItem from="1605406370221" duration="1181000" />
+      <workItem from="1605424408082" duration="3385000" />
+      <workItem from="1605435576360" duration="3372000" />
+      <workItem from="1605450041472" duration="109000" />
+      <workItem from="1605450658600" duration="603000" />
+      <workItem from="1605508070006" duration="2297000" />
+      <workItem from="1605532445275" duration="2856000" />
+      <workItem from="1605610704492" duration="5367000" />
+      <workItem from="1605664886360" duration="1236000" />
+      <workItem from="1605701903496" duration="5606000" />
+      <workItem from="1605775607879" duration="12988000" />
+      <workItem from="1605836500465" duration="484000" />
+      <workItem from="1605868576550" duration="9530000" />
+      <workItem from="1605930640153" duration="1215000" />
+      <workItem from="1605944390032" duration="215000" />
+      <workItem from="1605948678842" duration="9284000" />
+      <workItem from="1605964183255" duration="1088000" />
+      <workItem from="1605966589221" duration="207000" />
+      <workItem from="1606029873867" duration="874000" />
+      <workItem from="1606043842997" duration="4817000" />
+      <workItem from="1606129948229" duration="6464000" />
+      <workItem from="1606140631673" duration="624000" />
+      <workItem from="1606223803249" duration="936000" />
+      <workItem from="1606274371055" duration="1213000" />
+      <workItem from="1606295262537" duration="2196000" />
+      <workItem from="1606299564224" duration="1550000" />
+      <workItem from="1606488450700" duration="488000" />
+      <workItem from="1606526427732" duration="5435000" />
+      <workItem from="1606612780751" duration="13155000" />
+      <workItem from="1606643729620" duration="2073000" />
+      <workItem from="1606700670196" duration="69000" />
+      <workItem from="1606716068765" duration="6328000" />
+      <workItem from="1606806116587" duration="5503000" />
+      <workItem from="1606875785258" duration="346000" />
+      <workItem from="1606994357654" duration="600000" />
+      <workItem from="1607005985051" duration="18000" />
+      <workItem from="1607086607752" duration="1634000" />
+      <workItem from="1607133134495" duration="2278000" />
+      <workItem from="1607172565872" duration="1506000" />
+      <workItem from="1607219749745" duration="6534000" />
+      <workItem from="1607248390454" duration="1246000" />
+      <workItem from="1607249734630" duration="14466000" />
+      <workItem from="1607321552966" duration="1246000" />
     </task>
     <task id="LOCAL-00001" summary="源码">
       <created>1604826626955</created>
@@ -147,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604826626955</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="实验一:一二三五问">
+      <created>1605351073265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605351073265</updated>
+    </task>
+    <task id="LOCAL-00003" summary="实验一:一二三五问">
+      <created>1605351086713</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605351086713</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,72 +297,101 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="源码" />
-    <option name="LAST_COMMIT_MESSAGE" value="源码" />
+    <MESSAGE value="实验一:一二三五问" />
+    <option name="LAST_COMMIT_MESSAGE" value="实验一:一二三五问" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="99" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604487894650">
+    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606809591699">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="99" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487894650" />
-    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1604487884870">
+    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606809591699" />
+    <state x="511" y="241" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606716555824">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487884870" />
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1604921079227">
+    <state x="511" y="241" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1606716555824" />
+    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1605406182380">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1604921079227" />
+    <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1605406182380" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1607220409632">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1607220409632" />
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604487636605">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487636605" />
-    <state x="365" y="28" key="CommitChangelistDialog2" timestamp="1604826622254">
+    <state x="365" y="28" key="CommitChangelistDialog2" timestamp="1605351085644">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="365" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1604826622254" />
-    <state x="517" y="243" key="EnvironmentVariablesDialog" timestamp="1604487847867">
+    <state x="365" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1605351085644" />
+    <state x="396" y="330" key="EnvironmentVariablesDialog" timestamp="1605450733153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="517" y="243" key="EnvironmentVariablesDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487847867" />
-    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1605274766516">
+    <state x="396" y="330" key="EnvironmentVariablesDialog/0.0.1536.864@0.0.1536.864" timestamp="1605450733153" />
+    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1606645802116">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605274766516" />
+    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606645802116" />
     <state x="631" y="328" key="Github.ShareDialog" timestamp="1604826132723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="631" y="328" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1604826132723" />
-    <state width="1492" height="375" key="GridCell.Tab.0.bottom" timestamp="1605099761536">
+    <state width="1492" height="289" key="GridCell.Tab.0.bottom" timestamp="1607265731159">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="375" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
-    <state width="1492" height="375" key="GridCell.Tab.0.center" timestamp="1605099761536">
+    <state width="1492" height="289" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607265731159" />
+    <state width="1492" height="289" key="GridCell.Tab.0.center" timestamp="1607265731159">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="375" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
-    <state width="1492" height="375" key="GridCell.Tab.0.left" timestamp="1605099761536">
+    <state width="1492" height="289" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607265731159" />
+    <state width="1492" height="289" key="GridCell.Tab.0.left" timestamp="1607265731159">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="375" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
-    <state width="1492" height="375" key="GridCell.Tab.0.right" timestamp="1605099761536">
+    <state width="1492" height="289" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607265731159" />
+    <state width="1492" height="289" key="GridCell.Tab.0.right" timestamp="1607265731159">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="375" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605099761536" />
+    <state width="1492" height="289" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607265731159" />
+    <state width="1492" height="289" key="GridCell.Tab.1.bottom" timestamp="1607265731160">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="289" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607265731160" />
+    <state width="1492" height="289" key="GridCell.Tab.1.center" timestamp="1607265731160">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="289" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607265731160" />
+    <state width="1492" height="289" key="GridCell.Tab.1.left" timestamp="1607265731159">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="289" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607265731159" />
+    <state width="1492" height="289" key="GridCell.Tab.1.right" timestamp="1607265731160">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="289" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607265731160" />
+    <state x="272" y="77" key="SettingsEditor" timestamp="1606488617931">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="272" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606488617931" />
     <state x="377" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604827323303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="377" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604827323303" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1604923932720">
+    <state x="511" y="65" key="refactoring.ChangeSignatureDialog" timestamp="1605787718303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1604923932720" />
-    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1604909279910">
+    <state x="511" y="65" key="refactoring.ChangeSignatureDialog/0.0.1536.864@0.0.1536.864" timestamp="1605787718303" />
+    <state x="425" y="197" key="run.anything.popup" timestamp="1606617635315">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1604909279910" />
-    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604908985007">
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606617635315" />
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1606807816717">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.864@0.0.1536.864" timestamp="1604908985007" />
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606807816717" />
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607255098091">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1536.864@0.0.1536.864" timestamp="1607255098091" />
   </component>
 </project>

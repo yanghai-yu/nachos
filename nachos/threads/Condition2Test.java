@@ -66,7 +66,8 @@ public class Condition2Test {
 
                 conlock.acquire();
 
-                c2test.wakeAll();
+                c2test.wake();
+                c2test.wake();
 
                 conlock.release();
 

@@ -301,7 +301,7 @@ public class KThread {
 //			fork();
 //			//若线程此时正在sleep,则需要将其重新加入readyQueue才有机会调度
 //		else if(status==statusBlocked)
-//			ready();
+////			ready();
         isJoined = true;//第二次调用时报错
         waitingQueue.acquire(this);//通知等待队列本线程占用join资源，其他线程(currentThread)需要在队列中等待
         waitingQueue.waitForAccess(currentThread);//将currentThread放入等待队列
@@ -437,37 +437,63 @@ public class KThread {
     public static void selfTest() {
         Lib.debug(dbgThread, "Enter KThread.selfTest");
 
-        new KThread(new PingTest(1)).setName("forked thread").fork();
-        new PingTest(0).run();
+//        new KThread(new PingTest(1)).setName("forked thread").fork();
+//        new PingTest(0).run();
 //		PriorityTest();
 //	new Condition2Test().simpleCondition2Test();
+//        SpeakTest();
+//        Boat.selfTest();
     }
-//	public static void PriorityTest() {
-//		boolean status = Machine.interrupt().disable();//关中断，setPriority()函数中要求关中断
-//		System.out.println();
-//		final KThread a = new KThread(new KThread.PingTest(1)).setName("thread1");
-//		new PriorityScheduler().setPriority(a, 2);
-//		System.out.println("thread1的优先级为：" + new PriorityScheduler().getThreadState(a).priority);
-//		KThread b = new KThread(new KThread.PingTest(2)).setName("thread2");
-//		new PriorityScheduler().setPriority(b, 4);
-//		System.out.println("thread2的优先级为：" + new PriorityScheduler().getThreadState(b).priority);
-//		KThread c = new KThread(new Runnable() {
-//			public void run() {
-//				for (int i = 0; i < 5; i++) {
-//					if (i == 2)
-//						a.join();
-//					System.out.println(" thread 3 looped " + i + " times");
-//					//          KThread.currentThread().yield();
-//				}
-//			}
-//		}).setName("thread3");
-//		new PriorityScheduler().setPriority(c, 6);
-//		System.out.println("thread3的优先级为：" + new PriorityScheduler().getThreadState(c).priority);
-//		a.fork();
-//		b.fork();
-//		c.fork();
-//		Machine.interrupt().restore(status);
-//	}
+    public static void SpeakTest() {
+        System.out.println("\n测试Communicator类：");
+        Communicator c = new Communicator();
+        KThread speaker = new KThread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; ++i) {
+                    System.out.println("speaker speaking " + i);
+                    System.out.println("speaker spoken, word = " + i);
+                    c.speak(i);
+                    KThread.yield();
+                }
+            }
+        });
+        speaker.fork();
+        for (int i = 0; i < 5; ++i) {
+            System.out.println("listener listening " + i);
+            int x = c.listen();
+            System.out.println("listener listened, word = " + x);
+            KThread.yield();
+        }
+    }
+
+
+    public static void PriorityTest() {
+		boolean status = Machine.interrupt().disable();//关中断，setPriority()函数中要求关中断
+		System.out.println();
+		final KThread a = new KThread(new KThread.PingTest(1)).setName("thread1");
+		new PriorityScheduler().setPriority(a, 2);
+		System.out.println("thread1的优先级为：" + new PriorityScheduler().getThreadState(a).priority);
+		KThread b = new KThread(new KThread.PingTest(2)).setName("thread2");
+		new PriorityScheduler().setPriority(b, 4);
+		System.out.println("thread2的优先级为：" + new PriorityScheduler().getThreadState(b).priority);
+		KThread c = new KThread(new Runnable() {
+			public void run() {
+				for (int i = 0; i < 5; i++) {
+					if (i == 2)
+						a.join();
+					System.out.println(" thread 3 looped " + i + " times");
+					//          KThread.currentThread().yield();
+				}
+			}
+		}).setName("thread3");
+		new PriorityScheduler().setPriority(c, 6);
+		System.out.println("thread3的优先级为：" + new PriorityScheduler().getThreadState(c).priority);
+		a.fork();
+		b.fork();
+		c.fork();
+		Machine.interrupt().restore(status);
+	}
 
     private static final char dbgThread = 't';
 

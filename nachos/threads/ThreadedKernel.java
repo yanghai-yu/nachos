@@ -47,9 +47,10 @@ public class ThreadedKernel extends Kernel {
      */	
     public void selfTest() {
 	KThread.selfTest();
-	Alarm.selfTest();
+//	Alarm.selfTest();
 	Semaphore.selfTest();
 	SynchList.selfTest();
+//	LotteryScheduler.selfTest();
 	if (Machine.bank() != null) {
 	    ElevatorBank.selfTest();
 	}
@@ -59,7 +60,6 @@ public class ThreadedKernel extends Kernel {
      * nothing.
      */
     public void run() {
-
     }
 
 

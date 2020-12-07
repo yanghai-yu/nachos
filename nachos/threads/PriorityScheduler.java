@@ -339,15 +339,15 @@ public class PriorityScheduler extends Scheduler {
         /**
          * 表示有效优先级大小.若不传递优先级则其一直与priority相等;若传递优先级但是当前线程没有占用任何资源则其也和priority相等
          */
-        private int effectivePriority;
+        protected int effectivePriority;
         /**
          * 该集合记录了全部与本线程已经的获得资源相绑定的等待队列
          */
-        private Set<PriorityQueue> accessedSet = new HashSet<>();
+        protected Set<PriorityQueue> accessedSet = new HashSet<>();
         /**
          * 记录当前线程正在哪个阻塞队列中等待
          */
-        private PriorityQueue blockedQueue;
+        protected PriorityQueue blockedQueue;
 
     }
 }

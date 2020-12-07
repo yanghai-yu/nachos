@@ -40,6 +40,7 @@ public class Alarm {
             }
         }
         Machine.interrupt().restore(preState);
+        KThread.yield();
     }
 
 
