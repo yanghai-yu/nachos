@@ -1,7 +1,6 @@
 package nachos.vm;
 
 import nachos.machine.*;
-import nachos.userprog.UserKernel;
 import nachos.userprog.UserProcess;
 
 /**
@@ -25,9 +24,9 @@ public class VMProcess extends UserProcess {
         Processor processor = Machine.processor();
         int tlbSize = processor.getTLBSize();//得到TLB的大小
         //把所有valid==true的页表项写回进程的页表中
-        for(int i = 0;i<tlbSize;i++) {
+        for (int i = 0; i < tlbSize; i++) {
             TranslationEntry tEntry = processor.readTLBEntry(i);
-            if(tEntry.valid==true) {
+            if (tEntry.valid == true) {
                 pageTable[tEntry.vpn].used = tEntry.used;//写回
                 pageTable[tEntry.vpn].dirty = tEntry.dirty;
             }
@@ -45,44 +44,48 @@ public class VMProcess extends UserProcess {
         Processor processor = Machine.processor();
         int tlbSize = processor.getTLBSize();//得到TLB的大小
         //把所有的TLB设置为不可用
-        for(int i = 0;i<tlbSize;i++) {
+        for (int i = 0; i < tlbSize; i++) {
             TranslationEntry tEntry = processor.readTLBEntry(i);
             tEntry.valid = false;
             processor.writeTLBEntry(i, tEntry);
         }
     }
+
     /**
      * 加载某一进程的某一虚拟页到物理内存中
+     *
      * @param pid 想要换进来页属于的进程的进程号
      * @param vpn 想要换进来的页的虚拟页号
      */
-    public void loadOnePage(int pid,int vpn) {
+    public boolean loadOnePage(int pid, int vpn) {
         Integer swapPpn = VMKernel.getSwapPageOf(pid, vpn);// 先找到每个vpn对应的swap地址
-        if (swapPpn == null){
+        if (swapPpn == null) {
             //给的pid和vpn无效
-            //TODO 这里要给个什么办法报错
+            return false;
         }
         int saddr = swapPpn * pageSize;//在swap中的地址
         byte[] memory = Machine.processor().getMemory();
-        Integer ppn = ((VMKernel)Kernel.kernel).getOneFreePage(pid,vpn);//获取空现页，如果没有空闲的，会换出去一个
-        VMKernel.getSwapSpaceFile().read(saddr,memory,ppn * pageSize,pageSize);//读到内存
-        swapIn(vpn,ppn);
-        ((VMKernel)Kernel.kernel).recordOneInvertedPageUsage(ppn, pid, vpn);
+        Integer ppn = ((VMKernel) Kernel.kernel).getOneFreePage(pid, vpn);//获取空现页，如果没有空闲的，会换出去一个
+        int readNum = VMKernel.getSwapSpaceFile().read(saddr, memory, ppn * pageSize, pageSize);//读到内存
+        if (readNum == -1) {
+            return false;
+        }
+        swapIn(vpn, ppn);
+        ((VMKernel) Kernel.kernel).recordOneInvertedPageUsage(ppn, pid, vpn);
+        return true;
     }
-
 
     /**
      * 查看页表项的used情况，并置为false
+     *
      * @param vpn
      * @return
      */
-    public boolean checkUsed(int vpn){
+    public boolean checkUsed(int vpn) {
         boolean beforeUsed = pageTable[vpn].used;
         pageTable[vpn].used = false;
         return beforeUsed;
     }
-
-
 
     /**
      * 通知process要将vpn换出
@@ -109,12 +112,12 @@ public class VMProcess extends UserProcess {
         boolean isDirty = page.dirty;
         page.dirty = false;
         page.valid = false;
-        page.ppn = 1;
-//        page.used = false;//TODO 这里不知道要不要改
+        page.ppn = -1;
         return isDirty;
     }
 
-    public void swapIn(int vpn,int ppn) {
+
+    public void swapIn(int vpn, int ppn) {
         //TODO 如果不是从swap里load，怎么判断是在哪个section的哪一页
         TranslationEntry page = pageTable[vpn];
         page.valid = true;
@@ -177,8 +180,8 @@ public class VMProcess extends UserProcess {
 
     protected void releaseRes() {
         //释放swap表
-        for (TranslationEntry page:pageTable){
-            VMKernel.releaseOneSwapPage(pid,page.vpn);
+        for (TranslationEntry page : pageTable) {
+            VMKernel.releaseOneSwapPage(pid, page.vpn);
         }
         super.releaseRes();
     }
@@ -191,6 +194,7 @@ public class VMProcess extends UserProcess {
         super.unloadSections();
     }
     //新增了将页表使用位的修改措施，在读的时候会将被读的页的used置为ture
+
     /**
      * Transfer data from this process's virtual memory to the specified array. This
      * method handles address translation details. This method must <i>not</i>
@@ -265,6 +269,7 @@ public class VMProcess extends UserProcess {
     }
 
 //新增将页表使用位和修改位置为的操作，在写的时候会把used置为true并且把dirty置为true
+
     /**
      * Transfer data from the specified array to this process's virtual memory. This
      * method handles address translation details. This method must <i>not</i>
@@ -344,6 +349,7 @@ public class VMProcess extends UserProcess {
 
     /**
      * 系统用于处理TLBMiss的方法
+     *
      * @param badVAddr 导致TLBmiss的地址
      */
     public void handleTLBMiss(int badVAddr) {
@@ -361,11 +367,6 @@ public class VMProcess extends UserProcess {
             //所以需要判断换出去的页原来的拥有进程是否为当前进程，如果为当前进程则需要检查TLB中是否有该页的副本并且valid为True
             //如果有则将TLB中副本valid也置为false，并且还需要将TLB副本中的状态（used，dirty）写回进程页表，否则可能会发生错误
             //这样一来就保证了不会出现TLB中页表项valid为true但是实际进程页表中页表项valid为false的情况了
-            //
-            //           LOOK THERE！！！！！！！
-            //
-            //
-            ///////////////////////////////////
             loadOnePage(pid, vPageNum);
             pageEntry.valid = true;//将该页表项设置为有效，即再在内存中
         }
@@ -396,6 +397,7 @@ public class VMProcess extends UserProcess {
 
     /**
      * 用于在TLB miss时，获取从TLB中替换出去的TLB项的号
+     *
      * @return
      */
     private int getOutTLBId() {
@@ -404,14 +406,14 @@ public class VMProcess extends UserProcess {
         int tlbSize = processor.getTLBSize();
         int outId = -1;
         //从里面找看看有没有valid为false的页表项，如果有就换出他
-        for(int i = 0;i<tlbSize;i++) {
+        for (int i = 0; i < tlbSize; i++) {
             TranslationEntry tEntry = processor.readTLBEntry(i);
-            if(tEntry.valid==false) {
+            if (tEntry.valid == false) {
                 outId = i;
                 break;
             }
         }
-        if(outId==-1) {
+        if (outId == -1) {
             //如果没找到valid为false的页表项，就从tlb中随机选择一个页表项踢出
             outId = Lib.random(tlbSize);
         }
@@ -425,7 +427,7 @@ public class VMProcess extends UserProcess {
      * <i>cause</i> argument identifies which exception occurred; see the
      * <tt>Processor.exceptionZZZ</tt> constants.
      *
-     * @param    cause    the user exception that occurred.
+     * @param cause the user exception that occurred.
      */
     public void handleException(int cause) {
         Processor processor = Machine.processor();

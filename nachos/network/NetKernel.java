@@ -20,6 +20,7 @@ public class NetKernel extends VMKernel {
     /**
      * Initialize this kernel.
      */
+    @Override
     public void initialize(String[] args) {
         super.initialize(args);
 
@@ -32,10 +33,12 @@ public class NetKernel extends VMKernel {
      * assumes that the network is reliable (i.e. that the network's
      * reliability is 1.0).
      */
+    @Override
     public void selfTest() {
         super.selfTest();
 
         KThread serverThread = new KThread(new Runnable() {
+            @Override
             public void run() {
                 pingServer();
             }
@@ -52,8 +55,9 @@ public class NetKernel extends VMKernel {
         ping(local);
 
         // if we're 0 or 1, ping the opposite
-        if (local <= 1)
+        if (local <= 1) {
             ping(1 - local);
+        }
     }
 
     private void ping(int dstLink) {
@@ -105,6 +109,7 @@ public class NetKernel extends VMKernel {
     /**
      * Start running user programs.
      */
+    @Override
     public void run() {
         super.run();
     }
@@ -112,6 +117,7 @@ public class NetKernel extends VMKernel {
     /**
      * Terminate this kernel. Never returns.
      */
+    @Override
     public void terminate() {
         super.terminate();
     }

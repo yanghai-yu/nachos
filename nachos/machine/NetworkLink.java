@@ -53,6 +53,10 @@ import java.net.*;
  * for a network layer in Nachos. This should simplify your design for the
  * session/transport layer, since you can assume packets never arrive out of
  * order.
+ *
+ * 该类实现了数据链路层，nachos中不存在网络层，因此nachos的结构为
+ * 传输层->数据链路层->物理层
+ * 这是一种简化版本，因此可以假设数据包永远不会乱序到达
  */
 public class NetworkLink {
     /**
@@ -179,7 +183,7 @@ public class NetworkLink {
             if (incomingPacket == null)
                 scheduleReceiveInterrupt();
             else if (receiveInterruptHandler != null)
-                receiveInterruptHandler.run();
+                receiveInterruptHandler.run();  //PostOffice.messageReceived.V();
         } else {
             scheduleReceiveInterrupt();
         }

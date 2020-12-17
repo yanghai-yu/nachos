@@ -33,15 +33,18 @@ public class PostOffice {
         sendLock = new Lock();
 
         queues = new SynchList[MailMessage.portLimit];
-        for (int i = 0; i < queues.length; i++)
+        for (int i = 0; i < queues.length; i++) {
             queues[i] = new SynchList();
+        }
 
         Runnable receiveHandler = new Runnable() {
+            @Override
             public void run() {
                 receiveInterrupt();
             }
         };
         Runnable sendHandler = new Runnable() {
+            @Override
             public void run() {
                 sendInterrupt();
             }
@@ -50,6 +53,7 @@ public class PostOffice {
                 sendHandler);
 
         KThread t = new KThread(new Runnable() {
+            @Override
             public void run() {
                 postalDelivery();
             }
@@ -61,7 +65,7 @@ public class PostOffice {
     /**
      * Retrieve a message on the specified port, waiting if necessary.
      *
-     * @param    port    the port on which to wait for a message.
+     * @param port the port on which to wait for a message.
      * @return the message received.
      */
     public MailMessage receive(int port) {
@@ -71,8 +75,9 @@ public class PostOffice {
 
         MailMessage mail = (MailMessage) queues[port].removeFirst();
 
-        if (Lib.test(dbgNet))
+        if (Lib.test(dbgNet)) {
             System.out.println("got mail on port " + port + ": " + mail);
+        }
 
         return mail;
     }
@@ -94,9 +99,10 @@ public class PostOffice {
                 continue;
             }
 
-            if (Lib.test(dbgNet))
+            if (Lib.test(dbgNet)) {
                 System.out.println("delivering mail to port " + mail.dstPort
                         + ": " + mail);
+            }
 
             // atomically add message to the mailbox and wake a waiting thread
             queues[mail.dstPort].add(mail);
@@ -115,8 +121,9 @@ public class PostOffice {
      * Send a message to a mailbox on a remote machine.
      */
     public void send(MailMessage mail) {
-        if (Lib.test(dbgNet))
+        if (Lib.test(dbgNet)) {
             System.out.println("sending mail: " + mail);
+        }
 
         sendLock.acquire();
 

@@ -8,6 +8,7 @@ import nachos.threads.SynchList;
 import nachos.userprog.UserKernel;
 
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * A kernel that can support multiple demand-paging user processes.
@@ -23,6 +24,7 @@ public class VMKernel extends UserKernel {
     /**
      * Initialize this kernel.
      */
+    @Override
     public void initialize(String[] args) {
         super.initialize(args);
         invertedPageTable = new InvertedTranslationEntry[Machine.processor().getNumPhysPages()];
@@ -38,6 +40,7 @@ public class VMKernel extends UserKernel {
     /**
      * Test this kernel.
      */
+    @Override
     public void selfTest() {
         super.selfTest();
     }
@@ -45,6 +48,7 @@ public class VMKernel extends UserKernel {
     /**
      * Start running user programs.
      */
+    @Override
     public void run() {
         super.run();
     }
@@ -52,13 +56,15 @@ public class VMKernel extends UserKernel {
     /**
      * Terminate this kernel. Never returns.
      */
+    @Override
     public void terminate() {
+        System.out.println(test);
         //close and delete swapFile
         swapSpaceFile.close();
         fileSystem.remove("SwapSpace.bin");
         super.terminate();
     }
-
+private static int test = 0;
     @Override
     /**
      * 从空闲页链表中获取一页物理的页号
@@ -73,24 +79,12 @@ public class VMKernel extends UserKernel {
          */
         Integer freePageNum = super.getOneFreePage(pid, vPageNum);//申请一页空闲页
 
-        if (freePageNum == null){
+        if (freePageNum == null) {
             invertedPageTableLock.acquire();
             //判断没有空闲页了，选择一个牺牲者
-            /**
-             * 简单的时钟算法，确定下一个需要替换的页号
-             */
-            boolean find = false;
-            while(!find){
-                if (invertedPageTable[nextInvertedToCheck] != null) {
-                    InvertedTranslationEntry translationEntry = invertedPageTable[nextInvertedToCheck];
-                    boolean used = ((VMProcess)getUserProcess(translationEntry.pid)).checkUsed(vPageNum);
-                    if (!used) {
-                        freePageNum = nextInvertedToCheck;
-                        find = true;
-                    }
-                }
-                nextInvertedToCheck = (nextInvertedToCheck + 1) % Machine.processor().getNumPhysPages();
-            }
+            test++;
+            freePageNum = chooseByClock();
+//            freePageNum = chooseByRandom();
             InvertedTranslationEntry invertedTranslationEntry = invertedPageTable[freePageNum];
             invertedPageTable[freePageNum] = null;
             invertedPageTableLock.release();
@@ -99,8 +93,8 @@ public class VMKernel extends UserKernel {
             int toSwapVpn = invertedTranslationEntry.vpn;
             VMProcess theProcess = (VMProcess) getUserProcess(invertedTranslationEntry.pid);//准备换出的页所属的进程
 
-            boolean isDirty = theProcess.swapOut(invertedTranslationEntry.vpn,pid == toSwapPid);//通知这个线程它的这一页将要被换出去
-            if (isDirty){
+            boolean isDirty = theProcess.swapOut(invertedTranslationEntry.vpn, pid == toSwapPid);//通知这个线程它的这一页将要被换出去
+            if (isDirty) {
                 //如果是脏的就需要重写回去
                 int swapPpn = swapSpacePageTableHashMap.get(toSwapPid + ":" + toSwapVpn);//确定要切换出去的页在swap中的位置
                 swapSpaceFile.write(swapPpn * pageSize,
@@ -111,6 +105,33 @@ public class VMKernel extends UserKernel {
 
         }
         return freePageNum;
+    }
+
+
+    private int chooseByClock() {
+        int freePageNum = nextInvertedToCheck;
+        boolean find = false;
+        while (!find) {
+            if (invertedPageTable[nextInvertedToCheck] != null) {
+                InvertedTranslationEntry translationEntry = invertedPageTable[nextInvertedToCheck];
+                boolean used = ((VMProcess) getUserProcess(translationEntry.pid)).checkUsed(translationEntry.vpn);
+                if (!used) {
+                    freePageNum = nextInvertedToCheck;
+                    find = true;
+                }
+            }
+            nextInvertedToCheck = (nextInvertedToCheck + 1) % Machine.processor().getNumPhysPages();
+        }
+        return freePageNum;
+    }
+
+    private int chooseByRandom() {
+        Random random = new Random();
+        int num = random.nextInt(invertedPageTable.length);
+        while (invertedPageTable[num] == null) {
+            num = random.nextInt(invertedPageTable.length);
+        }
+        return num;
     }
 
 
@@ -127,66 +148,68 @@ public class VMKernel extends UserKernel {
 
     /**
      * 在将页正式换入内存后调用
+     *
      * @param invertedPageNum 反向页表号
-     * @param pid 进程号
-     * @param vPageNum 进程的虚拟页号
+     * @param pid             进程号
+     * @param vPageNum        进程的虚拟页号
      */
-    public void recordOneInvertedPageUsage(int invertedPageNum,int pid,int vPageNum){
+    public void recordOneInvertedPageUsage(int invertedPageNum, int pid, int vPageNum) {
         invertedPageTableLock.acquire();
-        invertedPageTable[invertedPageNum] = new InvertedTranslationEntry(pid,vPageNum);//将物理页使用情况记录下来
+        invertedPageTable[invertedPageNum] = new InvertedTranslationEntry(pid, vPageNum);//将物理页使用情况记录下来
         invertedPageTableLock.release();
     }
 
     /**
-     *
      * @param ppn
      * @return
      */
-    public InvertedTranslationEntry getInvertedEntryAt(int ppn){
+    public InvertedTranslationEntry getInvertedEntryAt(int ppn) {
         return invertedPageTable[ppn];
     }
 
     /**
-     *
      * @return 交换空间文件
      */
-    public static OpenFile getSwapSpaceFile(){
+    public static OpenFile getSwapSpaceFile() {
         return swapSpaceFile;//TODO 这样写会不会不太好，要不要加锁
     }
 
     /**
      * 获得已经分配给这个进程虚拟页的交换空间位置
+     *
      * @param pid 进程号
      * @param vpn 虚拟页号
      * @return 返回对应的交换空间的页号
      */
-    public static Integer getSwapPageOf(int pid,int vpn){
+    public static Integer getSwapPageOf(int pid, int vpn) {
         return swapSpacePageTableHashMap.get(pid + ":" + vpn);
     }
 
     /**
      * 为一个进程的虚拟页分配一个交换空间
      * 如果已经开辟的交换空间中已经没有空闲的，那就增加
+     *
      * @param pid 进程号
      * @param vpn 虚拟页号
      * @return 对应的交换空间页号
      */
-    public static Integer getOneFreeSwapPage(int pid,int vpn){
+    public static Integer getOneFreeSwapPage(int pid, int vpn) {
         swapSpaceLock.acquire();
         Integer swapPpn = (Integer) freeSwapSpacePage.pop();
-        if (swapPpn == null){//先查看是否有空闲的交换区页
+        if (swapPpn == null) {//先查看是否有空闲的交换区页
             swapPpn = swapSpacePageNum++;//如果没有则新增一页返回
         }
-        swapSpacePageTableHashMap.put(pid + ":" + vpn,swapPpn);
+        swapSpacePageTableHashMap.put(pid + ":" + vpn, swapPpn);
         swapSpaceLock.release();
         return swapPpn;
     }
 
     /**
      * 释放一个交换空间，即放到free里
+     *
      * @param freePage 交换空间页号
      */
-    public static void releaseOneSwapPage(Integer freePage){
+    public static void releaseOneSwapPage(Integer freePage) {
         swapSpaceLock.acquire();
         freeSwapSpacePage.add(freePage);
         swapSpaceLock.release();
@@ -194,10 +217,11 @@ public class VMKernel extends UserKernel {
 
     /**
      * 释放进程虚拟页对应的交换空间
+     *
      * @param pid 进程号
      * @param vpn 虚拟页号
      */
-    public static void releaseOneSwapPage(int pid,int vpn){
+    public static void releaseOneSwapPage(int pid, int vpn) {
         int freePage = swapSpacePageTableHashMap.get(pid + ":" + vpn);
         releaseOneSwapPage(freePage);
     }
