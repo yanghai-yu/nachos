@@ -2,33 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/machine/NetworkLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/NetworkLink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/machine/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/network/MailMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/MailMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/NetKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/NetKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/NetProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/NetProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/PostOffice.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/PostOffice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/proj3/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/proj3/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/proj4/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/vm/VMKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/vm/VMKernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/vm/VMProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/vm/VMProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/MailMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/MailMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/proj3/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/proj3/nachos.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/proj4/nachos.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMProcess.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +92,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MapReduce-naturalJoin" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -107,7 +108,7 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="nachos.machine.Machine" />
       <module name="osprogram" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nachos/proj3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/nachos/proj4" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="nachos.machine.*" />
@@ -217,7 +218,13 @@
       <workItem from="1607849316480" duration="746000" />
       <workItem from="1607850146043" duration="322000" />
       <workItem from="1607858386132" duration="1571000" />
-      <workItem from="1608208017909" duration="146000" />
+      <workItem from="1608208017909" duration="3837000" />
+      <workItem from="1608347687842" duration="72000" />
+      <workItem from="1608361007861" duration="7066000" />
+      <workItem from="1608375038575" duration="3117000" />
+      <workItem from="1608378358885" duration="7174000" />
+      <workItem from="1608427663990" duration="26000" />
+      <workItem from="1608427996065" duration="722000" />
     </task>
     <task id="LOCAL-00001" summary="源码">
       <created>1604826626955</created>
@@ -247,11 +254,31 @@
       <option name="project" value="LOCAL" />
       <updated>1607338577833</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="做实验四前的备份2">
+      <created>1608208346055</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608208346055</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -259,13 +286,14 @@
     <MESSAGE value="源码" />
     <MESSAGE value="实验一:一二三五问" />
     <MESSAGE value="做实验四前的备份" />
-    <option name="LAST_COMMIT_MESSAGE" value="做实验四前的备份" />
+    <MESSAGE value="做实验四前的备份2" />
+    <option name="LAST_COMMIT_MESSAGE" value="做实验四前的备份2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608208166895">
+    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608208210562">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1608208166895" />
+    <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1608208210562" />
     <state x="511" y="241" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606716555824">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -282,38 +310,42 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1604487636605" />
-    <state x="371" y="38" key="CommitChangelistDialog2" timestamp="1607338568088">
+    <state x="553" y="322" width="429" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608209244169">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="371" y="38" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1607338568088" />
+    <state x="553" y="322" width="429" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1608209244169" />
+    <state x="371" y="38" key="CommitChangelistDialog2" timestamp="1608208340701">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="371" y="38" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1608208340701" />
     <state x="396" y="330" key="EnvironmentVariablesDialog" timestamp="1605450733153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="396" y="330" key="EnvironmentVariablesDialog/0.0.1536.864@0.0.1536.864" timestamp="1605450733153" />
-    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1607336375097">
+    <state x="562" y="237" key="FileChooserDialogImpl" timestamp="1608363189568">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607336375097" />
+    <state x="562" y="237" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1608363189568" />
     <state x="631" y="328" key="Github.ShareDialog" timestamp="1604826132723">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="631" y="328" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1604826132723" />
-    <state width="1492" height="289" key="GridCell.Tab.0.bottom" timestamp="1607850062242">
+    <state width="1492" height="258" key="GridCell.Tab.0.bottom" timestamp="1608385909991">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state width="1492" height="289" key="GridCell.Tab.0.center" timestamp="1607850062241">
+    <state width="1492" height="258" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
+    <state width="1492" height="258" key="GridCell.Tab.0.center" timestamp="1608385909991">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607850062241" />
-    <state width="1492" height="289" key="GridCell.Tab.0.left" timestamp="1607850062241">
+    <state width="1492" height="258" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
+    <state width="1492" height="258" key="GridCell.Tab.0.left" timestamp="1608385909991">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607850062241" />
-    <state width="1492" height="289" key="GridCell.Tab.0.right" timestamp="1607850062242">
+    <state width="1492" height="258" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
+    <state width="1492" height="258" key="GridCell.Tab.0.right" timestamp="1608385909991">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
+    <state width="1492" height="258" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
     <state width="1492" height="289" key="GridCell.Tab.1.bottom" timestamp="1607850062242">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -330,14 +362,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1492" height="289" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state x="272" y="77" width="1153" height="709" key="SettingsEditor" timestamp="1607413041015">
+    <state x="272" y="77" width="1153" height="709" key="SettingsEditor" timestamp="1608362134611">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="272" y="77" width="1153" height="709" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607413041015" />
+    <state x="272" y="77" width="1153" height="709" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1608362134611" />
     <state x="377" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604827323303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="377" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604827323303" />
+    <state width="270" height="296" key="documentation.popup.size" timestamp="1608368984190">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="270" height="296" key="documentation.popup.size/0.0.1536.864@0.0.1536.864" timestamp="1608368984190" />
     <state x="511" y="65" key="refactoring.ChangeSignatureDialog" timestamp="1605787718303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

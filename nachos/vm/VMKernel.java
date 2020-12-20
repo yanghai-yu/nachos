@@ -31,12 +31,15 @@ public class VMKernel extends UserKernel {
         invertedPageTableLock = new Lock();
 
         /* 实验三问题二 */
-        swapSpaceFile = UserKernel.fileSystem.open("SwapSpace.bin", true);//初始化的时候，新开一个交换区文件
+        swapSpaceFile = openSwapFile();//初始化的时候，新开一个交换区文件
         freeSwapSpacePage = new SynchList();//刚开始可以不往里面写空闲页，有需要的时候直接往后造一个空闲页并给出即可，反正文件向后是无穷大的
         swapSpacePageTableHashMap = new HashMap<>();//初始化交换区页表
         swapSpaceLock = new Lock();//初始化交换区访问锁
     }
 
+    protected OpenFile openSwapFile() {
+        return UserKernel.fileSystem.open("SwapSpace.bin", true);
+    }
     /**
      * Test this kernel.
      */
@@ -61,9 +64,10 @@ public class VMKernel extends UserKernel {
         System.out.println(test);
         //close and delete swapFile
         swapSpaceFile.close();
-        fileSystem.remove("SwapSpace.bin");
+        fileSystem.remove(swapSpaceFile.getName());
         super.terminate();
     }
+
 private static int test = 0;
     @Override
     /**

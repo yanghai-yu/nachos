@@ -55,7 +55,7 @@ import java.net.*;
  * order.
  *
  * 该类实现了数据链路层，nachos中不存在网络层，因此nachos的结构为
- * 传输层->数据链路层->物理层
+ * 传输层->数据链路层->物理层（DatagramSocket）
  * 这是一种简化版本，因此可以假设数据包永远不会乱序到达
  */
 public class NetworkLink {
@@ -104,17 +104,9 @@ public class NetworkLink {
 
         System.out.print("(" + linkAddress + ")");
 
-        receiveInterrupt = new Runnable() {
-            public void run() {
-                receiveInterrupt();
-            }
-        };
+        receiveInterrupt = () -> receiveInterrupt();
 
-        sendInterrupt = new Runnable() {
-            public void run() {
-                sendInterrupt();
-            }
-        };
+        sendInterrupt = () -> sendInterrupt();
 
         scheduleReceiveInterrupt();
 
@@ -251,11 +243,7 @@ public class NetworkLink {
         if (Machine.autoGrader().canSendPacket(privilege) &&
                 Lib.random() <= reliability) {
             // ok, no drop
-            privilege.doPrivileged(new Runnable() {
-                public void run() {
-                    sendPacket();
-                }
-            });
+            privilege.doPrivileged(() -> sendPacket());
         } else {
             outgoingPacket = null;
         }
@@ -303,6 +291,7 @@ public class NetworkLink {
 
     static {
         hash = System.getProperty("user.name").hashCode();
+        //0100 1110 0100 0001
         portBase = 0x4E41 + Math.abs(hash % 0x4E41);
         networkID = (byte) (hash / 0x4E41);
     }

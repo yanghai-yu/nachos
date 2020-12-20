@@ -37,27 +37,12 @@ public class PostOffice {
             queues[i] = new SynchList();
         }
 
-        Runnable receiveHandler = new Runnable() {
-            @Override
-            public void run() {
-                receiveInterrupt();
-            }
-        };
-        Runnable sendHandler = new Runnable() {
-            @Override
-            public void run() {
-                sendInterrupt();
-            }
-        };
+        Runnable receiveHandler = () -> receiveInterrupt();
+        Runnable sendHandler = () -> sendInterrupt();
         Machine.networkLink().setInterruptHandlers(receiveHandler,
                 sendHandler);
 
-        KThread t = new KThread(new Runnable() {
-            @Override
-            public void run() {
-                postalDelivery();
-            }
-        });
+        KThread t = new KThread(() -> postalDelivery());
 
         t.fork();
     }

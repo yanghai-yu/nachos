@@ -434,7 +434,7 @@ public class UserProcess {
      * 题目中要求,一个进程最多能打开16个文件,且每个文件都有唯一的标识符
      * 用一个数组存储来存储这最多16个文件，那么它在数组中的位置就可以当做它唯一的标识符
      */
-    private OpenFile[] openFiles = new OpenFile[16];
+    protected OpenFile[] openFiles = new OpenFile[16];
 
     /**
      * Handle the halt() system call.
@@ -648,7 +648,7 @@ public class UserProcess {
      *
      * @return
      */
-    private int getFileDescriptor() {
+    protected int getFileDescriptor() {
         for (int i = 0; i < openFiles.length; i++) {
             if (openFiles[i] == null)
                 return i;
@@ -810,8 +810,8 @@ public class UserProcess {
             return 0;
         }
     }
-
-    private static final int
+//    FIXME:这里将private改成了protected,这样不好
+    protected static final int
             syscallHalt = 0,
             syscallExit = 1,
             syscallExec = 2,
