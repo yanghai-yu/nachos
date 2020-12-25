@@ -2,34 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a460be-f5cc-49a3-9714-28cf322d384f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nachos/machine/NetworkLink.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/NetworkLink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/machine/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/machine/Packet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/network/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/MailMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/MailMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/NetKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/NetKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nachos/network/NetProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/NetProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/network/PostOffice.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/network/PostOffice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/proj4/nachos.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/test/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/userprog/UserProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nachos/vm/VMKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/vm/VMKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chat.c" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chat.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chat.coff" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chat.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chat.o" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chatserver.c" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chatserver.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chatserver.coff" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chatserver.coff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nachos/test/chatserver.o" beforeDir="false" afterPath="$PROJECT_DIR$/nachos/test/chatserver.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/machine/NetworkLink.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/MailMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/MailMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$ByteStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$ByteStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$NTPState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$ReceiveWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$ReceiveWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$SendWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$SendWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection$Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/Connection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$AwaitingConnectionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$AwaitingConnectionMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$ConnectionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$ConnectionMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$SocketKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$SocketKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel$SocketPostOffice.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetKernel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetProcess$OpenSocket.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/NetProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/network/PostOffice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/proj4/nachos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/proj4/nachos.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/test/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/test/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/userprog/UserProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/osprogram/nachos/vm/VMKernel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,6 +230,15 @@
       <workItem from="1608378358885" duration="7174000" />
       <workItem from="1608427663990" duration="26000" />
       <workItem from="1608427996065" duration="722000" />
+      <workItem from="1608428769426" duration="5526000" />
+      <workItem from="1608444442895" duration="6247000" />
+      <workItem from="1608451392673" duration="123000" />
+      <workItem from="1608451528091" duration="38000" />
+      <workItem from="1608451579404" duration="756000" />
+      <workItem from="1608452437020" duration="128000" />
+      <workItem from="1608452578947" duration="212000" />
+      <workItem from="1608452803718" duration="1030000" />
+      <workItem from="1608466598804" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="源码">
       <created>1604826626955</created>
@@ -261,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608208346055</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="实验四github实现">
+      <created>1608431843422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608431843422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,9 +308,14 @@
     <MESSAGE value="实验一:一二三五问" />
     <MESSAGE value="做实验四前的备份" />
     <MESSAGE value="做实验四前的备份2" />
-    <option name="LAST_COMMIT_MESSAGE" value="做实验四前的备份2" />
+    <MESSAGE value="实验四github实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="实验四github实现" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="94" key="#Notifications" timestamp="1608452734139">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="94" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1608452734139" />
     <state x="164" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608208210562">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -302,10 +328,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="424" y="174" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.864@0.0.1536.864" timestamp="1605406182380" />
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1607220409632">
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1608430554132">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1607220409632" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1608430554132" />
     <state x="512" y="266" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604487636605">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -314,10 +340,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="553" y="322" width="429" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1608209244169" />
-    <state x="371" y="38" key="CommitChangelistDialog2" timestamp="1608208340701">
+    <state x="371" y="38" key="CommitChangelistDialog2" timestamp="1608431836877">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="371" y="38" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1608208340701" />
+    <state x="371" y="38" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1608431836877" />
     <state x="396" y="330" key="EnvironmentVariablesDialog" timestamp="1605450733153">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -330,50 +356,50 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="631" y="328" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1604826132723" />
-    <state width="1492" height="258" key="GridCell.Tab.0.bottom" timestamp="1608385909991">
+    <state width="1492" height="255" key="GridCell.Tab.0.bottom" timestamp="1608453834069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="258" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
-    <state width="1492" height="258" key="GridCell.Tab.0.center" timestamp="1608385909991">
+    <state width="1492" height="255" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608453834069" />
+    <state width="1492" height="255" key="GridCell.Tab.0.center" timestamp="1608453834069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="258" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
-    <state width="1492" height="258" key="GridCell.Tab.0.left" timestamp="1608385909991">
+    <state width="1492" height="255" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1608453834069" />
+    <state width="1492" height="255" key="GridCell.Tab.0.left" timestamp="1608453834069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="258" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
-    <state width="1492" height="258" key="GridCell.Tab.0.right" timestamp="1608385909991">
+    <state width="1492" height="255" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1608453834069" />
+    <state width="1492" height="255" key="GridCell.Tab.0.right" timestamp="1608453834069">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="258" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608385909991" />
-    <state width="1492" height="289" key="GridCell.Tab.1.bottom" timestamp="1607850062242">
+    <state width="1492" height="255" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1608453834069" />
+    <state width="1492" height="289" key="GridCell.Tab.1.bottom" timestamp="1608436013993">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state width="1492" height="289" key="GridCell.Tab.1.center" timestamp="1607850062242">
+    <state width="1492" height="289" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1608436013993" />
+    <state width="1492" height="289" key="GridCell.Tab.1.center" timestamp="1608436013992">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state width="1492" height="289" key="GridCell.Tab.1.left" timestamp="1607850062242">
+    <state width="1492" height="289" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1608436013992" />
+    <state width="1492" height="289" key="GridCell.Tab.1.left" timestamp="1608436013992">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state width="1492" height="289" key="GridCell.Tab.1.right" timestamp="1607850062242">
+    <state width="1492" height="289" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1608436013992" />
+    <state width="1492" height="289" key="GridCell.Tab.1.right" timestamp="1608436013992">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="289" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607850062242" />
-    <state x="272" y="77" width="1153" height="709" key="SettingsEditor" timestamp="1608362134611">
+    <state width="1492" height="289" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1608436013992" />
+    <state x="272" y="77" width="1153" height="709" key="SettingsEditor" timestamp="1608452790320">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="272" y="77" width="1153" height="709" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1608362134611" />
+    <state x="272" y="77" width="1153" height="709" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1608452790320" />
     <state x="377" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604827323303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="377" y="190" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604827323303" />
-    <state width="270" height="296" key="documentation.popup.size" timestamp="1608368984190">
+    <state width="270" height="296" key="documentation.popup.size" timestamp="1608451040739">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="270" height="296" key="documentation.popup.size/0.0.1536.864@0.0.1536.864" timestamp="1608368984190" />
+    <state width="270" height="296" key="documentation.popup.size/0.0.1536.864@0.0.1536.864" timestamp="1608451040739" />
     <state x="511" y="65" key="refactoring.ChangeSignatureDialog" timestamp="1605787718303">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -382,10 +408,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606617635315" />
-    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1606807816717">
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup" timestamp="1608431621266">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606807816717" />
+    <state x="425" y="86" width="672" height="676" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1608431621266" />
     <state x="491" y="350" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1607255098091">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

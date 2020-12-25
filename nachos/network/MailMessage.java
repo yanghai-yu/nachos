@@ -92,9 +92,9 @@ class MailMessage {
     int dstPort;
     /** The port used by this message on the source machine. */
     int srcPort;
-    /** Flags on this message */
+    /** 此消息上的标志 */
     int flags;
-    /** Sequence number of this message */
+    /** 该消息的序列号 */
     int sequence;
     /** The contents of this message, excluding the mail message header. */
     byte[] contents;
@@ -142,7 +142,7 @@ class MailMessage {
     static final int portLimit = 128;
 
     /**
-     * Valid packet flags
+     * 有效的数据包标志
      */
     static final int DATA = 0;
     static final int SYN = 1;

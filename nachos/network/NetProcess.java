@@ -61,7 +61,7 @@ public class NetProcess extends VMProcess {
     }
 
     /**
-     * The syscall handler for the connect syscall.
+     * connect系统调用.
      * @param host
      * @param port
      */
@@ -71,7 +71,6 @@ public class NetProcess extends VMProcess {
         if (fileDesc != -1) {
             try {
                 openFiles[fileDesc] = new OpenSocket(((NetKernel) kernel).postOffice.connect(host,port));
-//                FileRef.referenceFile(openFiles[fileDesc].getName());
             } catch (ClassCastException cce) {
                 Lib.assertNotReached("Error - kernel not of type NetKernel");
             }
@@ -81,7 +80,7 @@ public class NetProcess extends VMProcess {
     }
 
     /**
-     * The syscall handler for the accept syscall.
+     * accept系统调用.
      * @param port
      */
     private int handleAccept(int port) {
@@ -90,7 +89,7 @@ public class NetProcess extends VMProcess {
         if (fileDesc != -1) {
             Connection c = null;
             try {
-                // Try to get an entry in the file table
+                // 尝试在文件表中获取一个条目
                 c = ((NetKernel) kernel).postOffice.accept(port);
             } catch (ClassCastException cce) {
                 Lib.assertNotReached("Error - kernel not of type NetKernel");
@@ -98,7 +97,6 @@ public class NetProcess extends VMProcess {
 
             if (c != null) {
                 openFiles[fileDesc] = new OpenSocket(c);
-//                FileRef.referenceFile(openFiles[fileDesc].getName());
                 return fileDesc;
             }
         }
@@ -106,50 +104,4 @@ public class NetProcess extends VMProcess {
         return -1;
     }
 
-    /**
-     * A class to represent sockets that extends <tt>OpenFile</tt> so it can
-     * reside in the process's page table.
-     */
-    private static class OpenSocket extends OpenFile {
-        OpenSocket(Connection c) {
-            super(null, c.srcPort + "," + c.destAddress + "," + c.destPort);
-            connection = c;
-        }
-
-        /**
-         * Close this socket and release any associated system resources.
-         */
-        @Override
-        public void close() {
-            connection.close();
-            connection = null;
-        }
-
-        @Override
-        public int read(byte[] buf, int offset, int length) {
-            Lib.assertTrue(offset < buf.length && length <= buf.length - offset);
-            if (connection == null)
-                return -1;
-            else {
-                byte[] receivedData = connection.receive(length);
-                if (receivedData == null)
-                    return -1;
-                else {
-                    System.arraycopy(receivedData, 0, buf, offset, receivedData.length);
-                    return receivedData.length;
-                }
-            }
-        }
-
-        @Override
-        public int write(byte[] buf, int offset, int length) {
-            if (connection == null)
-                return -1;
-            else
-                return connection.send(buf, offset, length);
-        }
-
-        /** The underlying connection for this socket. */
-        private Connection connection;
-    }
 }

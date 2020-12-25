@@ -6,82 +6,82 @@
 #define true 1
 
 char receivedText[MAX_TEXT_SIZE], sendText[MAX_TEXT_SIZE];
-int  receivedEnd, sendEnd, host, socket, bytesRead, bytesWrit;
+int  receiveEnd, sendEnd, bytesNumR, bytesNumW;
 
-// Connects to the server specified in the first argument.
-// Receives line input from stdIn, sending it to socket (the server).
-// Receives lines from the server and puts them to stdOut.
 int main(int argc, char* argv[]) {
-	int host, socket, bytesRead, bytesWrit, done = false;
+	int host, socket, exitChat = false;
 	char lastByte;
-	receivedEnd = 0;
-
-	if (argc != 2) {
-        printf("error: please supply host address\n");
+	receiveEnd = 0;
+	sendEnd=0;
+	//防止用户不输入host address
+	if (argc < 2) {
+        printf("must supply host address\n");
         return 1;
     }
 
 	host = atoi(argv[1]);
 	socket = connect(host, 15);
+	printf("Success to connect: %d\n", host);
+	// 在用户输入退出的命令"."之前，一直循环，以获得其他用户的消息和发出用户的信息
+	while(!exitChat) {
+		//接收其他用户的消息
+		bytesNumR = read(socket, receivedText + receiveEnd, 1);
+		if (bytesNumR == 1) {
+			lastByte = receivedText[receiveEnd++];
+			if (lastByte == '\n') {  //接收完一行了，可以输出到stdout
+				bytesNumW = write(stdout, receivedText, receiveEnd);
+				receiveEnd = 0;
+			}
+		} else if (bytesNumR == -1) {// 读取出现问题
+			printf("Server shutdown. \n");
+			break;
+		}
 
-	printf("Successfully connected to host %d\n", host);
-	// Loop endlessly until there is a single '.'
-	while(!done) {
-		sendEnd = 0; // reset length of sendText
-
-		//Try to read the first byte of stdin
-		if ((bytesRead = read(stdin, sendText, 1)) == 1) { // block until '\n'
-			//Hooray we found something!
+		//发送自己填写的消息
+		sendEnd = 0;
+		//从stdin中读取一个字节
+		bytesNumR = read(stdin, sendText, 1);
+		if (bytesNumR == 1) { //stdin可以读出数据
 			lastByte = sendText[0];
 			sendEnd++;
-			while (lastByte != '\n') {
-				if ((bytesRead = read(stdin, sendText + sendEnd, 1)) == -1) {
-					printf("Error : Can't read from stdin. Bye!\n");
-					done = true;
+			while (lastByte != '\n') {//一直读完一整行或出现错误为止
+				bytesNumR = read(stdin, sendText + sendEnd, 1);
+				if (bytesNumR == -1) {
+					printf("Encounter an error while reading from stdin\n");//出现错误，退出
+					exitChat = true;
 					break;
-				} else {
-					// Record the concatenation
-					sendEnd += bytesRead;
+				}
+				else {//没有错误。可以继续
+					sendEnd += bytesNumR;
 					lastByte = sendText[sendEnd - 1];
-
-					// Stop getting input if sendEnd == MAX_TEXT_SIZE - 1
-					if (sendEnd == MAX_TEXT_SIZE - 1) {
+					if (sendEnd == MAX_TEXT_SIZE - 1) {//一次发送的文字有长度限制
 						sendText[MAX_TEXT_SIZE - 1] = '\n';
 						break;
 					}
 				}
 			}
 
-			// Break if we received the termination sequence
+			// 收到的是退出的命令"."时，退出聊天
 			if (sendText[0] == '.' && sendText[1] == '\n') {
-				printf("Received exit command. Bye!\n");
+				printf("Exit from chatroom\n");
 				break;
-			} else if(sendText[0] != '\n') {// Send to server if significant message
-				bytesWrit = write(socket, sendText, sendEnd);
+			} else if(sendText[0] != '\n') {
+				bytesNumW = write(socket, sendText, sendEnd);
 
-				if (bytesWrit == -1) {// If we can't send, server has terminated
-					printf("Server not responding. Bye!\n");
+				if (bytesNumW == -1) {//此时，说明server出现问题
+					printf("Something wrong with server.\n");
 					break;
 				}
 			}
+		}else if(bytesNumR == -1){
+			printf("Encounter an error\n");//出现错误，退出
+			exitChat = true;
 		}
 
-		// read from socket (chat server)
-		bytesRead = read(socket, receivedText + receivedEnd, 1);
-		if (bytesRead == 1) { // If there is a char from the socket, read it
-			lastByte = receivedText[receivedEnd++];
-			if (lastByte == '\n') {  // if it is a new line, write out the line to the stdOut
-				bytesWrit = write(stdout, receivedText, receivedEnd);
-				// Reset the receivedText string for more input from socket
-				receivedEnd = 0;
-			}
-		} else if (bytesRead == -1) {// Unexpected remote termination
-			printf("Server shutdown. Bye!\n");
-			break;
-		}
+
 	}
 
 	close(socket);
 
-	return 0;//Success
+	return 0;
 }

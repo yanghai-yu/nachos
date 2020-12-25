@@ -1,9 +1,6 @@
 package nachos.network;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
 
 import nachos.machine.*;
 import nachos.threads.*;
@@ -37,6 +34,7 @@ public class NetKernel extends VMKernel {
      * Start running user programs.
      */
     public void run() {
+        //打印改用户程序的网络地址
         System.out.println(Machine.networkLink().getLinkAddress());
         super.run();
     }
@@ -49,246 +47,13 @@ public class NetKernel extends VMKernel {
         super.terminate();
     }
 
-    SocketPostOffice postOffice;
+    static SocketPostOffice postOffice;
+
 
     /**
-     * A class to encapsulate the management of the NachOS Transport Protocol with threads to do delivery and such.
+     * 现有连接的映射（要处理哈希冲突）
      */
-    static class SocketPostOffice {
-        SocketPostOffice() {
-            nothingToSend = new Condition(sendLock);
-            terminationCondition = new Condition(terminationLock);
-
-            //Set up the delivery thread interrupt handlers
-            Machine.networkLink().setInterruptHandlers(() -> receiveInterrupt(),
-                    () -> sendInterrupt());
-
-            //Set up the postal worker threads
-            KThread postalDeliveryThread = new KThread(
-                    () -> postalDelivery()
-            ), postalSendThread = new KThread(
-                    () -> send()
-            ), timerInterruptThread = new KThread(
-                    () -> timerRoutine()
-            );
-
-            postalDeliveryThread.fork();
-            postalSendThread.fork();
-            timerInterruptThread.fork();
-        }
-
-        Connection accept(int port) {
-            Connection c = awaitingConnectionMap.retrieve(port);
-
-            if (c != null)
-                c.accept();
-
-            return c;
-        }
-
-        Connection connect(int host, int port) {
-            Connection connection = null;
-            boolean found = false;
-            int srcPort, tries = 0;
-            while (connection == null) {
-                //Find a source port for the connection
-                srcPort = portGenerator.nextInt(MailMessage.portLimit);
-                tries = 0;
-
-                while (!(found = (connectionMap.get(srcPort, host, port) == null)) && tries++ < MailMessage.portLimit)
-                    srcPort = (srcPort+1) % MailMessage.portLimit;
-
-                if (found) {
-                    connection = new Connection(host, port, srcPort);
-                    connectionMap.put(connection);
-                    if (!connection.connect()) {
-                        connectionMap.remove(connection);
-                        connection = null;
-                    }
-                }//else port saturation, so randomize and try again
-            }
-
-            return connection;
-        }
-
-        private Random portGenerator = new Random();
-
-        /**
-         * Closes the connection remove it from the connectionMap, if it exists.
-         * <p>
-         * This should only be called from the kernel when closing a "live" connection
-         * (i.e. one that successfully returned from connect).
-         * @param connection (not null)
-         */
-        void close(Connection connection) {
-            if (connectionMap.remove(connection.srcPort, connection.destAddress, connection.destPort) != null)
-                connection.close();
-        }
-
-        /**
-         * Closes all the <tt>Connection</tt> instances in both the <tt>connectionMap</tt>
-         * and <tt>awaitingConnectionMap</tt>, and remove the instances from the respective maps.
-         */
-        void shutdown() {
-            connectionMap.shutdown();
-            awaitingConnectionMap.shutdown();
-
-            terminationLock.acquire();
-
-            while (!connectionMap.isEmpty())
-                terminationCondition.sleep();
-
-            terminationLock.release();
-
-        }
-
-        private Lock terminationLock = new Lock();
-        private Condition terminationCondition;
-
-        /**
-         * Called by a <tt>Connection</tt> instance when it is fully closed and
-         * exhausted. This causes NetKernel to remove it from its connection mappings.
-         *
-         */
-        void finished(Connection c) {
-            if (connectionMap.remove(c.srcPort, c.destAddress, c.destPort) != null) {
-                terminationLock.acquire();
-                terminationCondition.wake();
-                terminationLock.release();
-            }
-        }
-
-        /**
-         * 使要通过网络发送的数据包入队。
-         * @param p
-         */
-        void enqueue(Packet p) {
-            sendLock.acquire();
-            sendQueue.add(p);
-            nothingToSend.wake();
-            sendLock.release();
-        }
-
-        /**
-         * 使用列表使有序的数据包序列入队。
-         *
-         * 如果方便的话，我们可以切换到数组。
-         */
-        void enqueue(List<Packet> ps) {
-            sendLock.acquire();
-            sendQueue.addAll(ps);
-            nothingToSend.wake();
-            sendLock.release();
-        }
-
-        /**
-         * The method for delivering the packets to the appropriate Sockets.
-         */
-        private void postalDelivery() {
-            MailMessage pktMsg = null;
-            Connection connection = null;
-            while (true) {
-                messageReceived.P();
-
-                try {
-                    pktMsg = new MailMessage(Machine.networkLink().receive());
-                } catch (MalformedPacketException e) {
-                    continue;//Just drop the packet
-                }
-
-                if ((connection = connectionMap.get(pktMsg.dstPort, pktMsg.packet.srcLink, pktMsg.srcPort)) != null)
-                    connection.packet(pktMsg);
-                else if (pktMsg.flags == MailMessage.SYN) {
-                    connection = new Connection(pktMsg.packet.srcLink, pktMsg.srcPort, pktMsg.dstPort);
-                    connection.packet(pktMsg);
-
-                    //Put it in the connectionMap
-                    connectionMap.put(connection);
-
-                    //Put it in the awaiting connection map
-                    awaitingConnectionMap.addWaiting(connection);
-                } else if (pktMsg.flags == MailMessage.FIN) {
-                    try {
-                        enqueue(new MailMessage(pktMsg.packet.srcLink, pktMsg.srcPort, pktMsg.packet.dstLink, pktMsg.dstPort, MailMessage.FIN | MailMessage.ACK, 0, MailMessage.EMPTY_CONTENT).packet);
-                    } catch (MalformedPacketException e) {
-                    }
-                }
-            }
-        }
-
-        /**
-         * Called when a packet has arrived and can be dequeued from the network
-         * link.
-         */
-        private void receiveInterrupt() {
-            messageReceived.V();
-        }
-
-        /**
-         * The method for sending packets over the network link, from a queue.
-         */
-        private void send() {
-            Packet p = null;
-            while (true) {
-                sendLock.acquire();
-
-                //MESA Style waiting
-                while (sendQueue.isEmpty())
-                    nothingToSend.sleep();
-
-                //Dequeue the packet
-                p = sendQueue.poll();
-                sendLock.release();
-
-                //Now work on sending the packet
-                Machine.networkLink().send(p);
-                messageSent.P();
-            }
-        }
-
-        /**
-         * Called when a packet has been sent and another can be queued to the
-         * network link. Note that this is called even if the previous packet was
-         * dropped.
-         */
-        private void sendInterrupt() {
-            messageSent.V();
-        }
-
-        /**
-         * The routine for the interrupt handler.
-         *
-         * Fires off an event to call the retransmit method on all sockets that require a timer
-         * interrupt.
-         */
-        private void timerRoutine() {
-            while (true) {
-                alarm.waitUntil(20000);
-
-                //Call the retransmit method on all the Connections
-                connectionMap.retransmitAll();
-                awaitingConnectionMap.retransmitAll();//FIXME: This may not be necessary
-            }
-        }
-
-        private ConnectionMap connectionMap = new ConnectionMap();
-        private AwaitingConnectionMap awaitingConnectionMap = new AwaitingConnectionMap();
-
-        private Semaphore messageReceived = new Semaphore(0);
-        private Semaphore messageSent = new Semaphore(0);
-        private Lock sendLock = new Lock();
-
-        /** 如果没有东西要发送，那么该条件变量sleep */
-        private Condition nothingToSend;
-
-        /** 发送的包的列表*/
-        private LinkedList<Packet> sendQueue = new LinkedList<Packet>();
-    }
-
-    /**
-     * A multimap to handle hash collisions
-     */
-    private static class ConnectionMap {
+    static class ConnectionMap {
         void retransmitAll() {
             lock.acquire();
             for (Connection c : map.values())
@@ -308,7 +73,7 @@ public class NetKernel extends VMKernel {
         }
 
         /**
-         * Closes all connections and removes them from this map.
+         * 关闭所有连接，并将其从此映射中删除。
          */
         void shutdown() {
             lock.acquire();
@@ -337,28 +102,28 @@ public class NetKernel extends VMKernel {
             return c;
         }
 
-        private HashMap<SocketKey, Connection> map = new HashMap<SocketKey, Connection>();
+        private HashMap<SocketKey, Connection> map = new HashMap<>();
 
         private Lock lock = new Lock();
     }
 
     /**
-     * A class that holds <tt>Connection</tt>s waiting to be accepted.
+     * 等待被接受的连接的映射
      */
-    private static class AwaitingConnectionMap {
+    static class AwaitingConnectionMap {
         /**
-         * Add the connection to the set of waiting connections
+         * 将连接添加到等待连接中
          * @param c
-         * @return true if the connection didn't already exist
+         * @return true
          */
         boolean addWaiting(Connection c) {
             boolean returnBool = false;
             lock.acquire();
             if (!map.containsKey(c.srcPort))
-                map.put(c.srcPort, new HashMap<SocketKey,Connection>());
+                map.put(c.srcPort, new HashMap<>());
 
             if (map.get(c.srcPort).containsKey(null))
-                returnBool = false;//Connection already exists
+                returnBool = false;//连接已经存在
             else {
                 map.get(c.srcPort).put(new SocketKey(c.srcPort,c.destAddress,c.destPort), c);
                 returnBool = true;
@@ -368,7 +133,7 @@ public class NetKernel extends VMKernel {
         }
 
         /**
-         * Closes all connections and removes them from this map.
+         * 关闭所有连接，并将其从此map中删除。
          */
         void shutdown() {
             lock.acquire();
@@ -385,9 +150,9 @@ public class NetKernel extends VMKernel {
         }
 
         /**
-         * Retrieve a <tt>Connection</tt> from the given port and remove it from <tt>this</tt>. Return null if one doesn't exist.
+         * 检索指定端口的连接，并从该map删除。 如果不存在，则返回null。
          * @param port
-         * @return a connection on the port if it exists.
+         * @return 端口上的连接（如果存在）。
          */
         Connection retrieve(int port) {
             Connection c = null;
@@ -397,7 +162,7 @@ public class NetKernel extends VMKernel {
 
                 c = mp.remove(mp.keySet().iterator().next());
 
-                //Get rid of set if it is empty
+                //如果是空的就把它从集合中删去
                 if (mp.isEmpty())
                     map.remove(port);
             }

@@ -2,8 +2,6 @@ package nachos.network;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import nachos.machine.Kernel;
 import nachos.machine.Lib;
@@ -35,10 +33,8 @@ class Connection {
     }
 
     /**
-     * Connect to another nachos instance
-     * <p>
-     * This will return false if it receives a SYN packet for this connection. This signals
-     * a potential protocol deadlock which we handle by trying a different local port.
+     * 连接到另一个Nachos实例
+     * 如果它收到此连接的SYN数据包，则将返回false。 这表示潜在的协议死锁，我们可以通过尝试其他本地端口来处理
      * @return true if the connection was successful
      */
     boolean connect() {
@@ -46,7 +42,7 @@ class Connection {
         currentState.connect(this);
         stateLock.release();
 
-        //return false if we hit the deadlock case
+        //如果遇到死锁，则返回false
         if (currentState == NTPState.DEADLOCK) {
             currentState = NTPState.CLOSED;
             return false;
@@ -55,8 +51,7 @@ class Connection {
     }
 
     /**
-     * Establish that the connection has been accepted by the local instance of
-     * NachOS.
+     * 确定该连接已被NachOS的本地实例接受.
      */
     boolean accept() {
         stateLock.acquire();
@@ -66,7 +61,7 @@ class Connection {
     }
 
     /**
-     * Begin to shutdown the connection
+     * 关闭连接
      */
     void close() {
         stateLock.acquire();
@@ -75,9 +70,9 @@ class Connection {
         stateLock.release();
     }
 
-    /** Called when we transition to the CLOSED state */
+    /** 当我们过渡到CLOSED状态时调用 */
     protected void finished() {
-        // Sanity check
+        // 完整性检查
         if (calledClose || exhausted()) {
             sendWindow.clear();
             receiveWindow.clear();
@@ -86,7 +81,7 @@ class Connection {
     }
 
     /**
-     * Called by PostOffice when a message is received for this Connection
+     * 当收到此连接的消息时，由PostOffice调用
      */
     void packet(MailMessage msg) {
         stateLock.acquire();
@@ -129,7 +124,7 @@ class Connection {
     }
 
     /**
-     * Called by PostOffice when the retransmission timer expires
+     * 重传计时器到期时由PostOffice调用
      */
     void retransmit() {
         stateLock.acquire();
@@ -138,7 +133,7 @@ class Connection {
     }
 
     /**
-     * Queue up data in buffer for sending
+     * 在缓冲区中排队发送数据
      */
     int send(byte[] buffer, int offset, int length) {
         byte[] toSend = new byte[length];
@@ -154,11 +149,11 @@ class Connection {
     }
 
     /**
-     * Read data from the connection
+     * 从连接读取数据
      * @param bytes
-     * 	max number of bytes to read
+     * 	读取的最大字节数
      * @return
-     * 	buffer with data received
+     * 	接收到的数据
      */
     byte[] receive(int bytes) {
         stateLock.acquire();
@@ -167,7 +162,7 @@ class Connection {
         return data;
     }
 
-    /** Send an empty/flagged packet NAOW */
+    /**发送空/已标记的数据包 */
     private void transmit(int flags) {
         switch (flags) {
             case MailMessage.SYN:
@@ -214,7 +209,6 @@ class Connection {
     }
 
     /**
-     * Construct a new packet addressed to the other end point of this Connection
      * 构造一个指向连接另一端的新数据包
      */
     private MailMessage makeMessage(int flags, int sequence, byte[] contents) {
@@ -233,9 +227,9 @@ class Connection {
         CLOSED {
             @Override
             void connect(Connection c) {
-                // Establish
+                // 建立
                 c.transmit(MailMessage.SYN);
-                // Immediately transition
+                // 立即过渡
                 Lib.debug(networkDebugFlag,"Transition to SYN_SENT");
                 c.currentState = SYN_SENT;
                 // sleep直到连接建立
@@ -246,7 +240,7 @@ class Connection {
             byte[] recv(Connection c, int maxBytes) {
                 byte[] data = super.recv(c, maxBytes);
 
-                // Exhausted?
+                // 枯竭？
                 if (c.exhausted())
                     c.finished();
 
@@ -260,14 +254,14 @@ class Connection {
 
             @Override
             void syn(Connection c, MailMessage msg) {
-                // Transition to SYN_RCVD
+                // 过渡到SYN_RCVD
                 Lib.debug(networkDebugFlag,"Tranition to SYN_RCVD");
                 c.currentState = SYN_RCVD;
             }
 
             @Override
             void fin(Connection c, MailMessage msg) {
-                // Send FINACK
+                // 发送FINACK
                 c.transmit(MailMessage.FIN | MailMessage.ACK);
             }
 
@@ -276,13 +270,13 @@ class Connection {
         SYN_SENT {
             @Override
             void timer(Connection c) {
-                // Send SYN
+                // 发送SYN
                 c.transmit(MailMessage.SYN);
             }
 
             @Override
             void syn(Connection c, MailMessage msg) {
-                // Protocol deadlock!
+                // 死锁，将状态置为DEADLOCK
                 Lib.debug(networkDebugFlag,"Transition to DEADLOCK");
                 c.currentState = DEADLOCK;
                 c.connectionEstablished.wake();
@@ -290,7 +284,7 @@ class Connection {
 
             @Override
             void synack(Connection c, MailMessage msg) {
-                // Goto ESTABLISHED, wake thread waiting in connect()
+                // 将状态置为ESTABLISHED, 唤醒在connect()中等待的线程
                 Lib.debug(networkDebugFlag,"Transition to ESTABLISHED");
                 c.currentState = ESTABLISHED;
                 c.connectionEstablished.wake();
@@ -298,17 +292,17 @@ class Connection {
 
             @Override
             void data(Connection c, MailMessage msg) {
-                // Send SYN
+                // 发送SYN
                 c.transmit(MailMessage.SYN);
             }
             @Override
             void stp(Connection c, MailMessage msg) {
-                // Send SYN
+                // 发送SYN
                 c.transmit(MailMessage.SYN);
             }
             @Override
             void fin(Connection c, MailMessage msg) {
-                // Send SYN
+                // 发送SYN
                 c.transmit(MailMessage.SYN);
             }
         },
@@ -316,7 +310,7 @@ class Connection {
         SYN_RCVD {
             @Override
             void accept(Connection c) {
-                // Send SYNACK, goto ESTABLISHED
+                // 发送SYNACK, 将状态置为ESTABLISHED
                 c.transmit(MailMessage.SYN | MailMessage.ACK);
                 Lib.debug(networkDebugFlag,"Transition to ESTABLISHED");
                 c.currentState = ESTABLISHED;
@@ -340,7 +334,7 @@ class Connection {
 
             @Override
             void syn(Connection c, MailMessage msg) {
-                // Send SYNACK
+                // 发送SYNACK
                 c.transmit(MailMessage.SYN | MailMessage.ACK);
             }
 
@@ -377,7 +371,7 @@ class Connection {
 
         STP_SENT {
             @Override int send(Connection c, byte[] buffer) {
-                // Can't send more data on a closing connection
+                // 无法在关闭的连接上发送更多数据
                 return -1;
             }
 
@@ -388,7 +382,7 @@ class Connection {
                 else
                     c.transmitStp();
 
-                // Retransmit unacknowledged
+                // 重新发送未确认
                 super.timer(c);
             }
 
@@ -432,7 +426,7 @@ class Connection {
         STP_RCVD {
             @Override
             int send(Connection c, byte[] buffer) {
-                // Can't send more data on a closing connection
+                // 无法在关闭的连接上发送更多数据
                 return -1;
             }
 
@@ -462,7 +456,7 @@ class Connection {
         CLOSING {
             @Override
             int send(Connection c, byte[] buffer) {
-                // Can't send more data on a closing connection
+                // 无法在关闭的连接上发送更多数据
                 return -1;
             }
 
@@ -504,11 +498,11 @@ class Connection {
 
         DEADLOCK {};
 
-        /** an app called connect() */
+        /** 一个名为connect（）的应用程序 */
         void connect(Connection c) {}
-        /** an app called accept() */
+        /** 一个名为accept（）的应用程序 */
         void accept(Connection c) {}
-        /** an app called read() */
+        /** 一个名为read（）的应用程序 */
         byte[] recv(Connection c, int maxBytes) {
             while (c.residualData.size() < maxBytes) {
                 MailMessage msg = c.receiveWindow.remove();
@@ -521,7 +515,7 @@ class Connection {
 
             return c.residualData.dequeue(Math.min(c.residualData.size(), maxBytes));
         }
-        /** an app called write(). */
+        /** 一个名为write（）的应用程序. */
         int send(Connection c, byte[] buffer) {
             try {
                 c.sendBuffer.write(buffer);
@@ -529,84 +523,31 @@ class Connection {
             c.transmitData();
             return buffer.length;
         }
-        /** an app called close(). */
+        /** 一个名为close（）的应用程序. */
         void close(Connection c) {}
-        /** the retransmission timer ticked. */
+        /** 重传计时器 ticked. */
         void timer(Connection c) {
             Lib.debug(networkDebugFlag,"Retransmitting unacknowledged packets");
             ((NetKernel) Kernel.kernel).postOffice.enqueue(c.sendWindow.packets());
         }
-        /** a SYN packet is received (a packet with the SYN bit set). */
+        /** 接收到SYN数据包（SYN位置1的数据包）. */
         void syn(Connection c, MailMessage msg) {}
-        /** a SYN/ACK packet is received (a packet with the SYN and ACK bits set). */
+        /** 接收到SYN / ACK数据包（已设置SYN和ACK位的数据包）. */
         void synack(Connection c, MailMessage msg) {}
-        /** a data packet is received (a packet with none of the SYN, ACK, STP, or FIN bits set). */
+        /** 接收到数据包（未设置SYN，ACK，STP或FIN位的数据包）. */
         void data(Connection c, MailMessage msg) {}
-        /** an ACK packet is received (a packet with the ACK bit set). */
+        /** 接收到ACK数据包（设置了ACK位的数据包）. */
         void ack(Connection c, MailMessage msg) {}
-        /** a STP packet is received (a packet with the STP bit set). */
+        /** 接收到STP数据包（将STP位置1的数据包）. */
         void stp(Connection c, MailMessage msg) {}
-        /** a FIN packet is received (a packet with the FIN bit set). */
+        /** 接收到FIN数据包（将FIN位置1的数据包）. */
         void fin(Connection c, MailMessage msg) {}
-        /** a FIN/ACK packet is received (a packet with the FIN and ACK bits set). */
+        /** 接收到FIN / ACK数据包（设置了FIN和ACK位的数据包）. */
         void finack(Connection c, MailMessage msg) {}
     }
 
-    private static class Window {
-        protected static final int WINDOW_SIZE = 16;
-        protected ArrayList<MailMessage> window = new ArrayList<MailMessage>(WINDOW_SIZE);
-        protected int startSequence, lastSequenceNumber = -1;
-        Window() {
-            clear();
-        }
-
-        boolean add(MailMessage msg) {
-            // Message was previously seen and dequeued already
-            if (msg.sequence < startSequence)
-                return true;
-
-            // Make sure message fits in window
-            if (msg.sequence >= startSequence + WINDOW_SIZE)
-                return false;
-            // Make sure message doesn't go past STOP
-            if (lastSequenceNumber > -1 && msg.sequence >= lastSequenceNumber)
-                return false;
-
-            int windowIndex = msg.sequence - startSequence;
-            while (window.size() < windowIndex+1)	// Expand window buffer if necessary
-                window.add(null);
-            if (window.get(windowIndex) == null)	// Only add packet to window if we haven't seen it before
-                window.set(windowIndex, msg);
-
-            return true;
-        }
-
-        boolean empty() {
-            return window.size() == 0;
-        }
-        boolean full() {
-            return window.size() == WINDOW_SIZE;
-        }
-
-        List<Packet> packets() {
-            List<Packet> lst = new ArrayList<Packet>();
-            for (MailMessage m : window) {
-                if (m != null)
-                    lst.add(m.packet);
-            }
-            Lib.debug(networkDebugFlag,"  Window has " + lst.size() + " packets");
-            return lst;
-        }
-
-        void clear() {
-            window.clear();
-            startSequence = 0;
-            lastSequenceNumber = -1;
-        }
-    }
-
     private class SendWindow extends Window {
-        protected int sequenceNumber;	// Sequence number to assign next outgoing packet
+        protected int sequenceNumber;	// 分配下一个传出数据包的序列号
 
         void acked(int sequence) {
             if (sequence < startSequence || sequence >= startSequence + window.size() || sequence >= lastSequenceNumber)
@@ -615,7 +556,7 @@ class Connection {
             int windowIndex = sequence - startSequence;
             window.set(windowIndex, null);
 
-            // Since this is the send buffer, we assume that we haven't packed any gaps into it (because add(byte[]) won't)
+            // 由于这是发送缓冲区，因此我们假设没有在其中填充任何间隙（因为add（byte []）不会）
             while (window.size() > 0 && window.get(0) == null) {
                 window.remove(0);
                 startSequence++;
@@ -625,10 +566,10 @@ class Connection {
         MailMessage add(byte[] bytes) {
             MailMessage msg = makeMessage(MailMessage.DATA, sequenceNumber, bytes);
             if (super.add(msg)) {
-                // Message added, increment sequence counter
+                // 序列号加一
                 sequenceNumber++;
             } else {
-                // Couldn't add to window
+                // 无法添加到窗口
                 msg = null;
             }
 
